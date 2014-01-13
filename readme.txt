@@ -19,12 +19,15 @@ Assets Manager is a self-hosted file sharing tool. Born out of the need for a fi
 * Disable links after they've been shared (no more fretting when sending out emails).
 * Force anyone trying to access a link to log into your site.
 
-Special thanks to @binmind for his QA.
+For more information check out the full blogpost about [Assets Manager](http://www.jackreichert.com/2014/01/12/introducing-assets-manager-for-wordpress/). 
+
+Questions? Comments? Requests? [Contact me](http://www.jackreichert.com/contact/).
 
 == Installation ==
 
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Resave your 'Pretty Permalinks' structure under "Settings > Permalinks".
 
 = To create an asset set =
 
@@ -36,6 +39,10 @@ Special thanks to @binmind for his QA.
 6. Publish post (**note:** links will not be available until the Asset Set as been published).
 
 == Frequently Asked Questions ==
+
+= Why aren't the links working? =
+
+You may need to reset the permalinks by going to Settings > Permalinks and pressing the "Save Changes" button.
 
 = Why would I want to diable a link? =
 
@@ -84,3 +91,5 @@ Answer to foo bar dilemma.
 
 * **Sha1:** If you upload a file that already exists it will link that file to your post instead of keeping multiple versions of the file.
 * **File replacement:** After uploading and even sharing a file you'll be able to replace the file behind the active link with a file of the same MIME type.
+
+Special thanks to @binmind for his extensive QA testing of the company’s plugin, his testing was crucial for development of the proof of concept and making sure everything was working as it should.
