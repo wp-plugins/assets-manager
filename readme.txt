@@ -1,5 +1,5 @@
 === Assets Manager ===
-Contributors: JackReichert
+Contributors: jackreichert
 Donate link: http://www.jackreichert.com/the-human-fund/
 Tags: uploads, file share, file management, asset management, assets
 Requires at least: 3.5
@@ -20,7 +20,6 @@ Assets Manager is a self-hosted file sharing tool. Born out of the need for a fi
 * Force anyone trying to access a link to log into your site.
 
 For more information check out the full blogpost about [Assets Manager](http://www.jackreichert.com/2014/01/12/introducing-assets-manager-for-wordpress/). 
-
 Questions? Comments? Requests? [Contact me](http://www.jackreichert.com/contact/).
 
 == Installation ==
