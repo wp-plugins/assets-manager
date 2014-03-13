@@ -3,7 +3,7 @@
 	Plugin Name: Assets Manager for WordPress
 	Plugin URI: http://www.jackreichert.com/2014/01/12/introducing-assets-manager-for-wordpress/
 	Description: Plugin creates an assets manager. Providing a self hosted file sharing platfrom.
-	Version: 0.1
+	Version: 0.2
 	Author: Jack Reichert
 	Author URI: http://www.jackreichert.com
 	License: GPL2
@@ -21,7 +21,7 @@ class wp_assets_manager {
 		register_activation_hook( __FILE__, array( $this, 'wp_assets_manager_activate') ); # plugin activation
 		register_deactivation_hook( __FILE__, array( $this, 'wp_assets_manager_deactivate') ); # plugin deactivation
 		
-		add_action( 'get_header', array( $this, 'check_url') ); # serve the file
+		add_action( 'wp_head', array( $this, 'check_url') ); # serve the file
 		
 		add_action( 'init', array( $this, 'create_uploaded_files') ); # creates custom post type `assets`
 		add_action( 'add_meta_boxes', array( $this, 'assets_manager_register_meta_box') ); # creates meta for uploading, managing assets
@@ -101,7 +101,7 @@ class wp_assets_manager {
 	 */	
 	public function check_url() {  
 		global $wpdb, $wp_query;
-		
+
 		// skip if not asset file
 		if (!$wp_query->is_attachment || get_post_type($wp_query->posts[0]->post_parent) != 'asset') {  
 			return false;  
@@ -277,7 +277,7 @@ class wp_assets_manager {
 						global $wpdb;
 						$aID = $asset->ID;
 						$table_name = $wpdb->prefix . "assets_log"; 
-						$query = $wpdb->prepare("SELECT SUM(count) as hits FROM $table_name WHERE aID = $aID;");
+						$query = $wpdb->prepare("SELECT SUM(count) as hits FROM $table_name WHERE aID = %d;", $aID);
 						$stats = current($wpdb->get_results($query, ARRAY_A));
 				
 						// prepare meta vals
@@ -321,7 +321,7 @@ class wp_assets_manager {
 	
 	public function load_admin_scripts() {
 		global $post; 
-		if (is_admin() && 'asset' === $post->post_type) {
+		if (is_admin() && is_object($post) && 'asset' === $post->post_type) {
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script('jquery-ui-sortable');
 			wp_enqueue_script( 'plupload-all', array('jquery') );

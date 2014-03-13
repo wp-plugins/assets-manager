@@ -201,7 +201,7 @@
 			});
 			
 			// initiate plupload
-			wpUploaderInit.multipart_params.post_id = $('[name=post_id').val();
+			wpUploaderInit.multipart_params.post_id = $('[name=post_id]').val();
 			
 			// remove url edit
 			$('#plupload-browse-button').pluploadJQ(wpUploaderInit, {filelist : "filelist"});

@@ -74,6 +74,10 @@ Answer to foo bar dilemma.
 
 == Changelog ==
 
+= 0.2 =
+
+* Bug js and php bug fixes
+
 = 0.1 =
 
 * This is the first version.
