@@ -3,7 +3,7 @@
 	Plugin Name: Assets Manager for WordPress
 	Plugin URI: http://www.jackreichert.com/2014/01/12/introducing-assets-manager-for-wordpress/
 	Description: Plugin creates an assets manager. Providing a self hosted file sharing platfrom.
-	Version: 0.2
+	Version: 0.2.1
 	Author: Jack Reichert
 	Author URI: http://www.jackreichert.com
 	License: GPL2
@@ -66,7 +66,7 @@ class wp_assets_manager {
 		$uID = get_current_user_id();
 		$table_name = $wpdb->prefix . "assets_log"; 
 		
-		$query = $wpdb->prepare("SELECT count FROM $table_name WHERE aID = $aID AND uID = $uID;");
+		$query = $wpdb->prepare("SELECT count FROM $table_name WHERE aID = %d AND uID = %d;", $aID, $uID);
 		$result = $wpdb->get_results($query, ARRAY_A);
 		
 		if (0 == count($result)) {
