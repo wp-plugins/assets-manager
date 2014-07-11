@@ -75,6 +75,9 @@ Answer to foo bar dilemma.
 == Changelog ==
 
 = 0.2.2 =
+* Changed action to prevent "headers sent" error
+
+= 0.2.2 =
 * Changed priority for action to prevent "headers sent" error
 
 = 0.2.1 =
