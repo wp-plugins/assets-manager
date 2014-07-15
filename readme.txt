@@ -73,6 +73,9 @@ Answer to foo bar dilemma.
 5. Share.
 
 == Changelog ==
+= 0.2.5 =
+* Changed action to prevent "headers sent" error
+
 = 0.2.4 =
 * Removed echo to prevent "headers sent" error
 
