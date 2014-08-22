@@ -3,7 +3,7 @@
 	Plugin Name: Assets Manager for WordPress
 	Plugin URI: http://www.jackreichert.com/2014/01/12/introducing-assets-manager-for-wordpress/
 	Description: Plugin creates an assets manager. Providing a self hosted file sharing platfrom.
-	Version: 0.2.5
+	Version: 0.2.6
 	Author: Jack Reichert
 	Author URI: http://www.jackreichert.com
 	License: GPL2
@@ -36,10 +36,6 @@ class wp_assets_manager {
 		$this->meta_keys = array('expires', 'secure', 'order', 'enabled', 'base_date', 'ext', 'order');
 	}
 
-
-	
-
-
 	/* 
 	 * Plugin activation
 	 */
@@ -57,7 +53,8 @@ class wp_assets_manager {
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );	
-		// schedule log cron
+		$this->create_uploaded_files();
+		flush_rewrite_rules();
 	}
 	
 	private function log_asset($aID) {
@@ -91,7 +88,7 @@ class wp_assets_manager {
 	 * Plugin deactivation
 	 */
 	public function wp_assets_manager_deactivate() {
-		// remove log cron
+		flush_rewrite_rules();
 	}
 
 	/* 

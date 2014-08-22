@@ -3,7 +3,7 @@ Contributors: jackreichert
 Donate link: http://www.jackreichert.com/the-human-fund/
 Tags: uploads, file share, file management, asset management, assets
 Requires at least: 3.5
-Tested up to: 3.9.1
+Tested up to: 4
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -73,6 +73,10 @@ Answer to foo bar dilemma.
 5. Share.
 
 == Changelog ==
+= 0.2.6 =
+* Tested up to 4.0
+* Added flush_rewrite_rules() to prevent need for resaving permalinks on activate 
+
 = 0.2.5 =
 * Changed action to prevent "headers sent" error
 
