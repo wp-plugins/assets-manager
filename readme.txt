@@ -3,7 +3,7 @@ Contributors: jackreichert
 Donate link: http://www.jackreichert.com/the-human-fund/
 Tags: uploads, file share, file management, asset management, assets
 Requires at least: 3.5
-Tested up to: 4
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ Assets Manager for WordPress is a self hosted file sharing tool,  enable / disab
 Assets Manager is a self-hosted file sharing tool. Born out of the need for a file sharing tool that was not blocked by high security firewalls, such as many existing file sharing services are, Assets Manager was developed. When you upload a file, or set of files, Assets Manager generates obscured links to the files so that you can control how those files are shared.
 
 = Features =
-* Set an exiration period for when the file link will expire.
+* Set an expiration period for when the file link will expire.
 * Disable links after they've been shared (no more fretting when sending out emails).
 * Force anyone trying to access a link to log into your site.
 
@@ -31,7 +31,7 @@ Questions? Comments? Requests? [Contact me](http://www.jackreichert.com/contact/
 = To create an asset set =
 
 1. Under Assets Manager menu 'Add New'
-2. Drag files to upload to where it says 'Drop fiels here' or select files to upload.
+2. Drag files to upload to where it says 'Drop files here' or select files to upload.
 3. Select settings for each file.
 4. Add a title (**note:** you will not be able to upload without a title).
 5. Hit upload.
@@ -43,7 +43,7 @@ Questions? Comments? Requests? [Contact me](http://www.jackreichert.com/contact/
 
 You may need to reset the permalinks by going to Settings > Permalinks and pressing the "Save Changes" button.
 
-= Why would I want to diable a link? =
+= Why would I want to disable a link? =
 
 Let's say there is incorrect information in the file, or there is an updated version, now you can disable the link sent out, shared, published and send out a new one.
 
