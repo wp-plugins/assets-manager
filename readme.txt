@@ -60,6 +60,13 @@ Yes you can. Assets Manager generates a page that contains all of the links in t
 
 Sure, just drag and drop. No need to save. All reordering happens via AJAX automatically.
 
+= Does this work with nginx? =
+
+Sure, I did notice that with Ubuntu + nginx I needed the following in my .conf file:
+location ~ ^/asset/(.*)$ {
+	try_files $uri $uri/ /index.php?$query_string;
+}
+
 = What about foo bar? =
 
 Answer to foo bar dilemma.
