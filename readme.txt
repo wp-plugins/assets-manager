@@ -3,7 +3,7 @@ Contributors: jackreichert
 Donate link: http://www.jackreichert.com/the-human-fund/
 Tags: uploads, file share, file management, asset management, assets
 Requires at least: 3.5
-Tested up to: 4.2.3
+Tested up to: 4.2.4
 Stable tag: trunk
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -80,8 +80,11 @@ Answer to foo bar dilemma.
 5. Share.
 
 == Changelog ==
+= 0.2.8 =
+Fixed additional HR added to posts (props @AEsco11)
+
 = 0.2.7 =
-* Refactored file serving to handled certain extensions that were buggy.
+* Refactored file serving to handled certain extensions that were buggy. (props @AEsco11)
 
 = 0.2.6 =
 * Tested up to 4.0

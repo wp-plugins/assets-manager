@@ -3,7 +3,7 @@
 	Plugin Name: Assets Manager for WordPress
 	Plugin URI: http://www.jackreichert.com/2014/01/12/introducing-assets-manager-for-wordpress/
 	Description: Plugin creates an assets manager. Providing a self hosted file sharing platfrom.
-	Version: 0.2.7
+	Version: 0.2.8
 	Author: Jack Reichert
 	Author URI: http://www.jackreichert.com
 	License: GPL2
@@ -416,31 +416,33 @@ class wp_assets_manager {
 	}
 	
 	public function single_asset_content($content) {
-		global $post;
-		$attachments = get_posts(array(
-			'post_parent' 	=> $post->ID,
-			'post_type'		=> 'attachment',
-			'meta_query' => array (
-				array (
-					'key' => 'enabled',
-					'value' => 'true',
-					'compare' => 'IN'
-				)),
-			'order'			=> 'ASC',
-			'orderby'		=> 'meta_value_num',
-			'meta_key'		=> 'order',
-			'posts_per_page' => -1
-		));
-		
-		$content .= '<hr><ul>';
-		foreach ($attachments as $i => $asset) {
-			if ( $this->is_published($asset->ID) && $this->is_enabled($asset->ID) && !$this->has_expired($asset->ID) && !$this->requires_login($asset->ID) ) {		
-				$content .=	'<li><a href="' . $this->get_asset_link($asset->ID) . '" target="_BLANK">' . $asset->post_title .'</a> <i>(' . get_post_meta($asset->ID, 'ext', true) . ')</i></li>';
-		}
-			}
-		$content .=	'</ul>';
-		$content .= '<style>.nav-links { display: none; }</style>';
-		
+        global $post;
+        if ( 'asset' === $post->post_type ) {                    
+            $attachments = get_posts(array(
+                'post_parent' 	=> $post->ID,
+                'post_type'		=> 'attachment',
+                'meta_query' => array (
+                    array (
+                        'key' => 'enabled',
+                        'value' => 'true',
+                        'compare' => 'IN'
+                    )),
+                'order'			=> 'ASC',
+                'orderby'		=> 'meta_value_num',
+                'meta_key'		=> 'order',
+                'posts_per_page' => -1
+            ));
+
+            $content .= '<hr><ul>';
+            foreach ($attachments as $i => $asset) {
+                if ( $this->is_published($asset->ID) && $this->is_enabled($asset->ID) && !$this->has_expired($asset->ID) && !$this->requires_login($asset->ID) ) {		
+                    $content .=	'<li><a href="' . $this->get_asset_link($asset->ID) . '" target="_BLANK">' . $asset->post_title .'</a> <i>(' . get_post_meta($asset->ID, 'ext', true) . ')</i></li>';
+            }
+                }
+            $content .=	'</ul>';
+            $content .= '<style>.nav-links { display: none; }</style>';
+        }
+        
 		return $content;
 	}
 	
