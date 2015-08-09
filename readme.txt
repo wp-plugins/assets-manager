@@ -80,6 +80,9 @@ Answer to foo bar dilemma.
 5. Share.
 
 == Changelog ==
+= 0.3 =
+Fixed issue where period was replacing wrong text
+
 = 0.2.9 =
 Removed style that hides .nav-links
 
