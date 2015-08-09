@@ -80,6 +80,9 @@ Answer to foo bar dilemma.
 5. Share.
 
 == Changelog ==
+= 0.2.9 =
+Removed style that hides .nav-links
+
 = 0.2.8 =
 Fixed additional HR added to posts (props @AEsco11)
 
